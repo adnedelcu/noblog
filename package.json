@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.5"
+  },
+  "name": "noblog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "git@github.com:adnedelcu/noblog.git",
+  "author": "Alexandru-Daniel Nedelcu <alexnedelcu0@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "babel-register": "^6.26.0",
+    "sequelize-cli": "^6.6.2"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file=.env index.js",
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:rollback": "sequelize-cli db:migrate:undo",
+    "seed": "sequelize-cli db:seed:all",
+    "seed:rollback": "sequelize-cli db:seed:undo"
+  }
+}
