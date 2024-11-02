@@ -24,23 +24,3 @@ export const show = async (req, res) => {
   }
   return res.status(200).json({ data: user });
 };
-
-export const store = async (req, res) => {
-  const user = await User.build(req.body);
-  try {
-    const newUser = await user.save();
-    res.status(201).json({ data: newUser });
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
-
-export const destroy = async (req, res) => {
-  const user = await User.findByPk(req.params.user);
-  try {
-    await user.delete()
-    res.status(204).send();
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
