@@ -9,7 +9,7 @@ export const index = async (req, res) => {
       return;
     }
 
-    const options = {};
+    const options = { order: [['created_at', 'DESC']] };
     if (req.query?.with) {
       options.include = req.query?.with;
       if (options.include == 'all') {
