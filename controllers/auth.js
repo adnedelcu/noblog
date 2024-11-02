@@ -30,10 +30,11 @@ export const login = async (req, res, next) => {
       email: req.body.email,
     },
   });
+
   if (!user) {
     throw new ApiError('Invalid credentials', 401);
   }
-  console.log(req.body, user);
+
   if (await bcrypt.compare(req.body.password, user.password) != true) {
     throw new ApiError('Invalid credentials', 401);
   }
